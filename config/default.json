@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://admin:adminPassword@notekeeper.tzs6j.mongodb.net/NoteKeeper?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
