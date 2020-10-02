@@ -21,6 +21,18 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+router.get("/:id", auth, async (req, res) => {
+    try {
+        let note = await Note.findById(req.params.id);
+
+        if (!note) return res.status(404).json({ msg: "Note not found" });;
+        res.json(notes);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  });
+
 // @route     POST api/notes
 // @desc      Add new note
 // @access    Private
